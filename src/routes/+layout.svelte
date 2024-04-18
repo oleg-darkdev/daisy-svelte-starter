@@ -1,31 +1,22 @@
-<script>
-	import '../app.css';
-	// import { onMount } from 'svelte';
-	// onMount(() => {	});
+<script lang="ts">
+	import '../app.postcss';
+
+	import { language } from '@inlang/sdk-js';
+	import {ThemeSwitcher, SvelteTheme, LocaleSwitcher} from '$shared/';
+
+	export let data;
 </script>
 
-<main class="scrollbar-x-hide overflow-auto">
-	<slot />
-</main>
+	<!-- <a href="/{language}">
+		<h1>Home</h1>
+	</a> -->
 
-<style>
+	<LocaleSwitcher />
 
-  :global(.font-yourFont) {
-		font-family: 'yourFont';
-		line-height: 1.2;
-	}
+	<ThemeSwitcher />
 
+<slot />
 
-
-	@font-face {
-		font-family: 'yourFont';
-		font-style: normal;
-		font-weight: 500;
-
-		src: local(''), /* Super Modern Browsers */ url('/fonts/yourFont.woff') format('woff'),
-			/* Modern Browsers */ url('/fonts/yourFont.ttf') format('truetype'),
-			/* Safari, Android, iOS */ url('/fonts/yourFont.svg') format('svg'); /* Legacy iOS */
-	}
+<SvelteTheme attribute="data-theme" />
 
 
-</style>

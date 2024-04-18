@@ -5,12 +5,12 @@ module.exports = {
 	theme: {
 		extends: {},
 		fontFamily: {
-			inter: ['inter', 'sans-serif'],
+			// inter: ['inter', 'sans-serif'],
 			poppins: ['poppins', 'serif'],
 			'fira-mono': ['fira-mono']
 		}
-  },
-  darkMode: ['class', '[data-theme="dark"]'],
+	},
+	darkMode: ['class', '[data-theme="dark"]'],
 	theme: {
 		// colors: {},
 		screens: {
@@ -19,7 +19,7 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', ...fontFamily.sans]
+				sans: ['poppins', ...fontFamily.sans]
 			}
 		}
 	},
@@ -36,8 +36,7 @@ module.exports = {
 					info: '#3ABFF8',
 					success: '#36D399',
 					warning: '#FBBD23',
-					error: '#F87272',
-
+					error: '#F87272'
 				}
 			}
 		]
