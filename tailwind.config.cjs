@@ -1,15 +1,9 @@
 const { fontFamily, screens } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
-		extends: {},
-		fontFamily: {
-			// inter: ['inter', 'sans-serif'],
-			poppins: ['poppins', 'serif'],
-			'fira-mono': ['fira-mono']
-		}
-	},
 	darkMode: ['class', '[data-theme="dark"]'],
 	theme: {
 		// colors: {},
@@ -19,26 +13,32 @@ module.exports = {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['poppins', ...fontFamily.sans]
+				sans: ['Inter', ...fontFamily.sans]
 			}
+		},
+		colors: {
+			black: colors.black,
+			white: colors.white,
+			// gray: colors.gray,
+			emerald: colors.emerald,
+			indigo: colors.indigo,
+			lime: colors.lime,
+
+			darkBlue: '#03354a',
+			// yellow: colors.yellow,
+			yellowH: '#fff388',
+			yellowB: '#fff8b9',
+			grey: '#f4f4f4',
+			yellow: '#ffef5a',
+			pink: '#ff96bc',
+			purple: '#d2a4ff',
+			blue: '#54f5ff',
+			turquoise: '#8cffcf',
+			green: '#99ff96',
+			greenB: '#c6fab4',
+			blueB: '#a5b4fb',
+			primary: '#54ffd6'
 		}
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
-	// daisyUI config (optional)
-	daisyui: {
-		themes: [
-			{
-				mytheme: {
-					primary: '#661AE6',
-					secondary: '#D926AA',
-					accent: '#1FB2A5',
-					neutral: '#191D24',
-					info: '#3ABFF8',
-					success: '#36D399',
-					warning: '#FBBD23',
-					error: '#F87272'
-				}
-			}
-		]
-	}
+	plugins: [require('@tailwindcss/forms')]
 };
